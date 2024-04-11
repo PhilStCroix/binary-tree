@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.tree-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tree-node {
+  text-align: center;
+}
+
+.node-value {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.children {
+  display: flex;
+  justify-content: space-around;
+}
+
