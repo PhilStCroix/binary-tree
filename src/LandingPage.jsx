@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LandingPage = () => {
+function LandingPage() {
   return (
-    <div className="landing">
-      <h1>Welcome to BinaryTree Visualizer!</h1>
-      <p>Understand and visualize your binary search trees in a simple and interactive way.</p>
-      <div className="actions">
-        <Link to="/enter-numbers" className="btn btn-primary">Try it now!</Link>
-        <Link to="/learn-more" className="btn btn-secondary">Learn More</Link>
-      </div>
+    <div>
+      <h1>Welcome to the Binary Tree Visualizer</h1>
+      <p>Use the links below to navigate the app:</p>
+      <ul>
+        <li><Link to="/enter-numbers">Enter Numbers</Link></li>
+        <li><Link to="/prev-trees">Previous Trees</Link></li>
+      </ul>
     </div>
   );
-};
+}
 
 export default LandingPage;

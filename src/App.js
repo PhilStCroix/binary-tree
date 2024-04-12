@@ -1,32 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import EnterNumbers from './EnterNumbers';
 import PrevTrees from './PrevTrees';
-import LandingPage from './LandingPage'; // Import your LandingPage component
+import TreeVisuals from './TreeVisuals';
+import LandingPage from './LandingPage';
 
 function App() {
+  const [treeData, setTreeData] = useState(null);
+
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link> {/* This link leads to the landing page */}
-            </li>
-            <li>
-              <Link to="/enter-numbers">Enter Numbers</Link>
-            </li>
-            <li>
-              <Link to="/prev-trees">Previous Trees</Link>
-            </li>
-          </ul>
-        </nav>
-
         <Routes>
-          <Route path="/" element={<LandingPage />} /> {/* Sets LandingPage as the default */}
-          <Route path="/enter-numbers" element={<EnterNumbers />} />
+          <Route path="/" element={<LandingPage />} />
+          {/* Pass setTreeData to EnterNumbers so it can update the treeData state */}
+          <Route path="/enter-numbers" element={<EnterNumbers setTreeData={setTreeData} />} />
           <Route path="/prev-trees" element={<PrevTrees />} />
-          {/* TreeVisuals will not have a direct link */}
+          {/* Pass the treeData state to TreeVisuals */}
+          <Route path="/tree-visuals" element={treeData ? <TreeVisuals serializedTreeStructure={JSON.stringify(treeData)} /> : <p>Loading or no tree data available</p>} />
         </Routes>
       </div>
     </Router>
@@ -34,4 +25,3 @@ function App() {
 }
 
 export default App;
-

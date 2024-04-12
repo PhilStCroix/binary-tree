@@ -89,3 +89,12 @@
 .btn-secondary {
   background-color: #6c757d;
 }
+
+svg {
+  display: block; /* Ensure SVG is not set to display: none */
+  width: 100%; /* Optional: Make SVG responsive */
+  max-width: 960px; /* Maximum width */
+  height: auto; /* Maintain aspect ratio */
+  background: #f9f9f9; /* Light background to see the drawing */
+  border: 1px solid #ccc; /* Border to help see the edges */
+}
