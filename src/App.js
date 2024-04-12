@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/enter-numbers" exact element={<EnterNumbers />} />
           <Route path="/prev-trees" exact element={<PrevTrees />} />
-          <Route path="/tree-visualization" exact element={<TreeVisuals />} />
+          <Route path="/tree-visuals" exact element={<TreeVisuals />} />
         </Routes>
 
       </div>
